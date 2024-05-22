@@ -1,0 +1,121 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+@import url("./overlaymenu.css");
+
+/* Various Containers */
+
+.page-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 100%; 
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    width: 400px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.signUpContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+/* Custom checkbox */
+
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.checkbox-custom {
+    display: inline-block;
+    width: 24px; 
+    height: 24px;
+    background: url('../assets/SVGs/Unchecked.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked + label .checkbox-custom {
+    background: url('../assets/SVGs/Checked.svg') no-repeat center center;
+    width: 24px; 
+    height: 24px;
+    background-size: contain;
+    display: inline-block;
+}
+
+/* Checkbox Settings */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+}
+
+.checkbox-container-inside {
+    display: flex;
+}
+
+.checkbox-container label {
+    display: inline-flex;
+    align-items: center; 
+    cursor: pointer;
+}
+
+/* Terms & Conditions overlay */
+
+.terms-overlay {
+    position: fixed;
+    top: 20%; 
+    right: 0;
+    width: 30rem;
+    height: auto; 
+    max-height: 70%; 
+    background-color: white;
+    z-index: 1000; 
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    box-sizing: border-box;
+    transform: translateX(100%) translateY(-50%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    overflow-y: auto; 
+    border-radius: 4px; 
+}
+  
+.terms-overlay.active {
+    transform: translateX(0%); 
+    opacity: 1; 
+}
+
+/* Misc */ 
+
+.links a {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+
+@media (max-width: 936px) {
+    .page-container {
+        margin-top: -1rem;
+    }
+}
+

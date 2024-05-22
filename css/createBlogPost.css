@@ -1,0 +1,99 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+@import url("./overlaymenu.css");
+
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.postForm {
+    width: 100%;
+    height: auto;
+    margin-right: 12rem;
+    margin-left: 12rem;
+}
+
+.currentPost {
+    display: flex;
+    justify-content: center;
+}
+
+/* Input Settings*/
+
+input,
+select, 
+textarea {
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* File upload */
+
+.file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-label {
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-label img {
+    margin-right: 8px; 
+}
+
+.file-label span,
+.file-label img {
+    vertical-align: middle;
+}
+
+/* Misc */
+
+.lastpart {
+    margin-top: 1rem;
+}
+
+.divider {
+    display: flex;
+    background-color: var(--color-primary);
+    width: 100%;
+    height: 22px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 936px) {
+    .postForm {
+        margin: 0 2rem 0 2rem;
+    }
+
+    .form-container {
+        margin: 0rem 0 0rem 0;
+    }
+}

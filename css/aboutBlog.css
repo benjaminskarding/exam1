@@ -1,0 +1,41 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+@import url("./overlaymenu.css");
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    height: 100%;
+}
+
+.about-the-blog-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 936px) {
+    .page-container {
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 798px) {
+    .about-the-blog-container {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .page-container {
+        padding-right: 6rem;
+        padding-left: 6rem;
+        margin-bottom: 3rem;
+    }
+}

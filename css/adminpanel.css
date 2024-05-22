@@ -1,0 +1,78 @@
+@import url("./_reset.css");
+@import url("./_variables.css");
+@import url("./common.css");
+@import url("./overlaymenu.css");
+
+h1, h2 { 
+    font-size: 1.375rem;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    height: 100%;
+}
+
+.pagetitles,
+.managePostsContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.managePostsContainer {
+    margin-top: 3rem;
+}
+
+.pagetitles {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.delete {
+    color: red;
+}
+
+.edit {
+    color: green;
+}
+
+.edit:hover,
+.delete:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 936px) {
+    .page-container {
+        margin-top: 2rem;
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .managePostsContainer table th:first-child,
+    .managePostsContainer table td:first-child {
+        display: none;
+    }
+
+
+}

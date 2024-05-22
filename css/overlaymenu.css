@@ -1,0 +1,117 @@
+.overlay {
+    position: fixed;   
+    width: 100%;       
+    height: 100%;      
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.9); 
+    overflow: hidden; 
+    transition: transform 0.5s; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+    transform: translateY(-100%); 
+}
+
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    max-width: 600px; 
+    text-align: center; 
+    margin-top: 5rem; 
+    color: white; 
+}
+
+.overlay-content > * {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.closebtn {
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    padding: 12px;
+    transition: transform 0.3s; 
+}
+
+.social-links a:hover {
+    transform: scale(1.2); 
+}
+
+.overlay-links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.overlay-links a {
+    font-size: 1.375rem;
+    padding: 8px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+.overlay-links a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: transparent; 
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.5s ease; 
+}
+
+.overlay-links a:hover::after {
+    background-color: #ddd; 
+}
+
+.overlay-links a:hover {
+    color: #ddd; 
+}
+
+.blogDescription {
+    padding-top: 2rem;
+}
+
+.dividerline {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.dividerline::after {
+    content: '';
+    display: block;
+    width: 100%; 
+    height: 2px; 
+    background-color: white; 
+    position: absolute;
+    left: 0; 
+    top: 0; 
+}
+
+
+h1 {
+    margin: 0;
+}

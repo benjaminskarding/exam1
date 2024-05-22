@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Read captivating travel stories and interviews with inspiring individuals on Nomad Narrative.">
+        <script type="module" defer src='../js/main.js'></script>
+        <title>Blog Post</title>
+        <link rel="stylesheet" href="../css/blogpost.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/Favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/Favicon/favicon-16x16.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class="landing-section" aria-label="Main image description">
+        <header class="header-collection">
+            <nav class="header-main-nav">
+              <div class="header-nav-logo">
+                <a href="../index.html" class="nav-link" aria-label="Go to homepage">
+                  <img src="../assets/SVGs/LogoWithText.svg" id="header-logo-img" alt="logo image in header">
+                  <img src="../assets/SVGs/smallLogoWhite.svg" id="header-logo-img-small" class="small-logo" alt="small logo image in header">
+                </a> 
+              </div>
+              <div class="header-nav-right">
+                <a href="#" class="hidden" id="displayAdminPanel">
+                    <p class="adminPanel">Admin Panel</p>
+                </a>
+                <button id="logoutButton" class="adminPanel hidden">Logout</button>
+                <button id="openMenuOverlay" aria-label="Open menu" class="no-style-button">
+                    <img src="../assets/SVGs/hamburger.svg" alt="hamburger menu in header">
+                </button>
+              </div>
+            </nav>
+        </header>
+
+        <div id="loadingIndicatorContainer" class="hide">
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <section>
+            <div class="hero-text"> 
+                <div class="category-and-tags-container">
+                    <div id="postCategory" class="bold"></div>
+                    <div class="bold">X</div>
+                    <div id="postTag" class="bold"></div>
+                </div>
+                <div class="post-title-and-date-container">
+                    <div id="postTitle" class="post-title semibold"></div>
+                    <div id="postDate" class="post-date light"></div>
+                </div>
+                <div id="postIntro" class="post-description-container">
+                    <p></p>
+                </div>
+                <div class="read-share-container">
+                    <a href="#" class="read-share-landing">SHARE THIS POST</a>
+                </div>
+                <div class="read-share-container-2">
+                    <a href="#" class="read-share-landing" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
+                </div>
+            </div>
+        </section>
+    </div>
+        
+        <section class="postSection">
+            <div class="post-container">
+                <h1 id="postHeader"></h1>
+                <p id="postHeaderParagraphContent" class="dividerline post-description"></p>
+            </div>
+        </section>
+
+        <section id="lastSection">
+            <div class="last-section">
+                <div class="author">
+                    <span class="author-text bold">Author</span><span id="postAuthor">&nbsp;|&nbsp;</span>
+                </div>
+                <a href="#" class="bold" id="shareLink"></a>
+            </div>
+            <div class="postNav">
+                <a href="#" class="nav-link semibold"></a>
+                <a href="#" class="nav-link semibold"></a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <img src="../assets/SVGs/instagramBlack.svg" alt="Instagram">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="../assets/SVGs/youtubeBlack.svg" alt="YouTube">
+                </a>
+                <a href="#" class="social-link">
+                    <img src="../assets/SVGs/facebookBlack.svg" alt="Facebook">
+                </a>
+            </div>
+        </section>
+
+    <footer>
+        <div class="footer-content">
+            <a href="../index.html" class="nav-link" aria-label="Go to homepage">
+                <img src="../assets/SVGs/LogoOrange.svg" alt="logo image in footer">
+            </a> 
+        </div>
+    </footer>
+</body>
+</html>
