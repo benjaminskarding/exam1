@@ -58,7 +58,8 @@ export function capitalizeFirstLetter(string) {
 window.copyLink = function(event) { // Assign copyLink function to global window. Related to carouselItem 'share' button/link
     event.preventDefault();
     const postId = event.target.getAttribute('post-id');
-    const url = `${window.location.origin}/post/index.html?id=${postId}`;
+    const basePath = '/exam1/post/index.html';
+    const url = `${window.location.protocol}//${window.location.host}${basePath}?id=${postId}`;
 
     navigator.clipboard.writeText(url).then(() => {
         alert('Link to post copied!');
