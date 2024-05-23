@@ -45,12 +45,12 @@ function generateCarouselHTML(posts) {
                         <p>${post.body.split(' ').slice(0, 30).join(' ')}...</p>
                     </div>
                     <div class="read-share-container">
-                        <a href="/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
+                        <a href="/exam1/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
                         <a class="read-share-landing">|</a>
                         <a href="#" class="read-share-landing" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                     </div>
                     <div class="read-share-container-mobile">
-                        <a href="/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
+                        <a href="/exam1/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
                         <a href="#" class="read-share-landing" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                     </div>
                 </div>
