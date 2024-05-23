@@ -41,7 +41,7 @@ export function insertMenuOverlay() {
                 <p class="dividerline blogDescription">Nomad Narrative is your go-to source for exploring the globe through the eyes of a remote-working adventurer. Each post is an invitation to journey with us, whether you're seeking practical advice for your next destination or simply indulging your wanderlust from the comfort of your home. Join us as we explore the world, one story at a time.</p>
                 <div class="social-links">
                     <a href="#">
-                        <img src="${rootPath}assets/SVGs/instagram.svg" id="instagram-svg-overlay" alt="instagram link in overlay menu">
+                        <img src="${rootPath}exam1/assets/SVGs/instagram.svg" id="instagram-svg-overlay" alt="instagram link in overlay menu">
                     </a>
                     <a href="#">
                         <img src="${rootPath}assets/SVGs/youtube.svg" id="youtube-svg-overlay" alt="youtube link in overlay menu">
