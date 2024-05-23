@@ -1,4 +1,4 @@
-import { insertMenuOverlay, termsAndConditionsOverlay } from './overlays.mjs';
+import { termsAndConditionsOverlay, setupMenuOverlay } from './overlays.mjs';
 import { populateHomepageGrid } from './populateGridWithPosts.mjs';
 import { fetchPost } from './fetchPosts.mjs';
 import { populatePost } from './populateSinglePostPage.mjs';
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupUserInterface();
     termsAndConditionsOverlay();
     await initializePageSpecificFunctions();
-    insertMenuOverlay();
+    setupMenuOverlay();
 });
 
 
