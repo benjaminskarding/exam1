@@ -66,7 +66,7 @@ function generateCarouselHTML(posts) {
         </a>
         ${posts.map((_, index) => `
             <a href="#" data-slide="${index}">
-                <img src="assets/SVGs/Dot indictaor — ${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav">
+                <img src="assets/SVGs/Dot_${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav">
             </a>
         `).join('')}
         <a href="#" id="arrow-right-post-nav">
@@ -94,10 +94,10 @@ function setupCarouselNavigation() {
             const img = dot.querySelector('img');
             if (i === index) {
                 dot.classList.add('active');
-                img.src = 'assets/SVGs/Dot indictaor — 1.svg';
+                img.src = 'assets/SVGs/Dot_1.svg';
             } else {
                 dot.classList.remove('active');
-                img.src = 'assets/SVGs/Dot indictaor — 2.svg';
+                img.src = 'assets/SVGs/Dot_2.svg';
             }
         });
 
