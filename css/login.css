@@ -1,5 +1,5 @@
-@import url(css/_reset.css);
-@import url(css/_variables.css);
+@import url("./reset.css");
+@import url("./variables.css");
 @import url("./common.css");
 @import url("./overlaymenu.css");
 
