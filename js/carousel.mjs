@@ -64,15 +64,15 @@ function generateCarouselHTML(posts) {
 
     const postNavigatorHTML = `
         <a href="#" id="arrow-left-post-nav">
-            <img src="assets/SVGs/ArrowLeft.svg" alt="arrow-left-post-nav">
+            <img src="./assets/SVGs/ArrowLeft.svg" alt="arrow-left-post-nav">
         </a>
         ${posts.map((_, index) => `
             <a href="#" data-slide="${index}" class="${index === 0 ? 'active' : ''}">
-                <img src="assets/SVGs/Dot_${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav" class="${index === 0 ? 'active-dot' : ''}">
+                <img src="./assets/SVGs/Dot_${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav" class="${index === 0 ? 'active-dot' : ''}">
             </a>
         `).join('')}
         <a href="#" id="arrow-right-post-nav">
-            <img src="assets/SVGs/ArrowRight.svg" alt="arrow-right-post-nav">
+            <img src="./assets/SVGs/ArrowRight.svg" alt="arrow-right-post-nav">
         </a>
     `;
 
