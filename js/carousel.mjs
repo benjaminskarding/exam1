@@ -7,6 +7,7 @@ export async function initializeCarousel() {
     showLoadingIndicator();
     try {
         const posts = await fetchPosts();
+        console.log('Fetched posts:', posts); // Log posts data
         if (posts && posts.data) {
             generateCarouselHTML(posts.data.slice(0, 3)); 
             setupCarouselNavigation();
@@ -28,9 +29,10 @@ function generateCarouselHTML(posts) {
     posts.forEach((post, index) => {
         const isActive = index === 0 ? 'active' : '';
         const altText = post.media?.alt || 'Main image description';
+        const bgImage = post.media?.url || 'default.jpg';
 
         const carouselItem = `
-            <div class="carousel-item ${isActive}" data-bg="${post.media.url}" aria-label="${altText}">
+            <div class="carousel-item ${isActive}" data-bg="${bgImage}" aria-label="${altText}">
                 <div class="hero-text" id="hero-text-${index}">
                     <div class="category-and-tags-container">
                         <div class="bold">${(post.tags[0] || 'CATEGORY').toUpperCase()}</div>
@@ -65,8 +67,8 @@ function generateCarouselHTML(posts) {
             <img src="assets/SVGs/ArrowLeft.svg" alt="arrow-left-post-nav">
         </a>
         ${posts.map((_, index) => `
-            <a href="#" data-slide="${index}">
-                <img src="assets/SVGs/Dot_${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav">
+            <a href="#" data-slide="${index}" class="${index === 0 ? 'active' : ''}">
+                <img src="assets/SVGs/Dot_${index + 1}.svg" alt="dot-ind-${index + 1}-post-nav" class="${index === 0 ? 'active-dot' : ''}">
             </a>
         `).join('')}
         <a href="#" id="arrow-right-post-nav">
