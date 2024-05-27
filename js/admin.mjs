@@ -100,11 +100,8 @@ export function setupUserInterface() {
 // Could have made the adminpanel.html a much harder URL for anyone to guess, but don't consider it neccessary for demo */
 
 function showAdminPanelLink(adminPanelLink, userIsAdmin) {
-    const currentPath = window.location.pathname;
-    const projectBasePath = currentPath.split('/').slice(0, 2).join('/'); 
-
     if (userIsAdmin) {
-        adminPanelLink.href = `${projectBasePath}/pages/adminpanel.html`;
+        adminPanelLink.href = `../pages/adminpanel.html`;
         showOrHideButton(true, adminPanelLink);
     } else {
         showOrHideButton(false, adminPanelLink);
