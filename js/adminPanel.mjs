@@ -15,7 +15,7 @@ export async function populateAdminPanel() {
 
         tableBody.innerHTML = '';
 
-        // Populate table with fetched posts
+        
         posts.data.forEach((post, index) => {
             const row = document.createElement('tr');
 
@@ -61,7 +61,7 @@ async function handleDelete(event) {
         const response = await deletePost(postId);
         if (response.ok) {
             alert('Post deleted successfully.');
-            await populateAdminPanel(); // Refresh the table
+            await populateAdminPanel(); 
         } else {
             const data = await response.json();
             alert('Failed to delete post: ' + (data.message || 'Error'));
