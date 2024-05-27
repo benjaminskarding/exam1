@@ -56,9 +56,12 @@ export function capitalizeFirstLetter(string) {
 }
 
 export function getRootPath() {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const pathParts = window.location.pathname.split('/');
-    return `/${pathParts[1]}`;
+    return isLocal ? '' : `/${pathParts[1]}`;
 }
+
+
 
 window.copyLink = function(event) { // Assign copyLink function to global window. Related to carouselItem 'share' button/link
     event.preventDefault();
