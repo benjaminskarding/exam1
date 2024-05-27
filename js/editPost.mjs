@@ -66,7 +66,7 @@ async function handleEditFormSubmit(event) {
         const rootPath = getRootPath();
         if (response.ok) {
             alert('Post updated successfully.');
-            window.location.href = `${rootPath}/index.html?id=${postId}`;
+            window.location.href = `${rootPath}/post/index.html?id=${postId}`; 
         } else {
             const responseData = await response.json();
             alert('Failed to update post: ' + (responseData.message || 'Error'));
