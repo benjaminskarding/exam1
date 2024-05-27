@@ -72,9 +72,12 @@ export async function RegisterUser(event) {
     }
 }
 
-export function initializeRegistrationForm() {
+function initializeRegistrationForm() {
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', RegisterUser);
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', initializeRegistrationForm);

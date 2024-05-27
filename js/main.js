@@ -4,7 +4,6 @@ import { fetchPost } from './fetchPosts.mjs';
 import { populatePost } from './populateSinglePostPage.mjs';
 import { setupUserInterface } from './admin.mjs';
 import { populateAdminPanel } from './adminPanel.mjs';
-import { initializeRegistrationForm } from './register.mjs';
 import { hideLoadingIndicator, showLoadingIndicator } from './utils.mjs';
 
 
@@ -43,10 +42,6 @@ async function initializePageSpecificFunctions() {
             }
         }
     
-        // Check if on registration page
-        if (window.location.pathname === '/account/register.html') {
-            initializeRegistrationForm(); // Changed to call initializeRegistrationForm
-        }
     } finally {
         hideLoadingIndicator();
     }
