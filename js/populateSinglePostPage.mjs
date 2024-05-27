@@ -1,5 +1,5 @@
 import { fetchPost, fetchPosts } from './fetchPosts.mjs';
-import { capitalizeFirstLetter, showLoadingIndicator, hideLoadingIndicator } from "./utils.mjs";
+import { capitalizeFirstLetter, showLoadingIndicator, hideLoadingIndicator, getRootPath } from "./utils.mjs";
 
 export async function populatePost() {
     const params = new URLSearchParams(window.location.search);
@@ -61,6 +61,7 @@ function updateLastSection(currentPost, prevPost, nextPost) {
     const shareLink = document.getElementById('shareLink');
     const postNavLinks = document.querySelectorAll('.postNav .nav-link');
     const authorElement = document.getElementById('postAuthor');
+    const rootPath = getRootPath();
 
     if (shareLink) {
         shareLink.textContent = 'SHARE THIS POST';
@@ -70,14 +71,14 @@ function updateLastSection(currentPost, prevPost, nextPost) {
 
     if (postNavLinks[0] && prevPost) {
         postNavLinks[0].textContent = 'Previous';
-        postNavLinks[0].href = `/post/index.html?id=${prevPost.id}`;
+        postNavLinks[0].href = `${rootPath}/post/index.html?id=${prevPost.id}`;
     } else {
         postNavLinks[0].style.display = 'none';
     }
 
     if (postNavLinks[1] && nextPost) {
         postNavLinks[1].textContent = 'Next';
-        postNavLinks[1].href = `/post/index.html?id=${nextPost.id}`;
+        postNavLinks[1].href = `${rootPath}/post/index.html?id=${nextPost.id}`;
     } else {
         postNavLinks[1].style.display = 'none';
     }
