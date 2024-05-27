@@ -82,11 +82,6 @@
     z-index: 10; 
 }
 
-.carousel-item {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
 /* Grid */
 
 .grid-container {
@@ -127,6 +122,11 @@
 .grid-item:hover img, /* Show image on hover */
 .carousel-item.active { 
     opacity: 1; 
+}
+
+.carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .text-overlay {
