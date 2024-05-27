@@ -92,7 +92,7 @@
 }
 
 .blogDescription {
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 
 .dividerline {
@@ -105,12 +105,27 @@
     display: block;
     width: 100%; 
     height: 2px; 
-    background-color: white; 
+    background-color: white!important; 
     position: absolute;
     left: 0; 
     top: 0; 
 }
 
+.dividerline2 {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.dividerline2::after {
+    content: '';
+    display: block;
+    width: 100%; 
+    height: 2px; 
+    background-color: black!important; 
+    position: absolute;
+    left: 0; 
+    top: 0; 
+}
 
 h1 {
     margin: 0;
