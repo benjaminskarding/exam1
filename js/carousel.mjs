@@ -1,5 +1,5 @@
 import { fetchPosts } from './fetchPosts.mjs';
-import { showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
+import { showLoadingIndicator, hideLoadingIndicator, getRootPath } from './utils.mjs';
 
 // Homepage carousel 
 
@@ -21,6 +21,7 @@ export async function initializeCarousel() {
 function generateCarouselHTML(posts) {
     const carouselInner = document.getElementById('carousel-inner');
     const postNavigator = document.getElementById('post-navigator');
+    const rootPath = getRootPath();
 
     carouselInner.innerHTML = '';
     postNavigator.innerHTML = '';
@@ -46,12 +47,12 @@ function generateCarouselHTML(posts) {
                         <p>${post.body.split(' ').slice(0, 30).join(' ')}...</p>
                     </div>
                     <div class="read-share-container">
-                        <a href="post/index.html?id=${post.id}" class="read-share-landing">READ</a>
+                        <a href="${rootPath}/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
                         <a class="read-share-landing">|</a>
                         <a href="#" class="read-share-landing" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                     </div>
                     <div class="read-share-container-mobile">
-                        <a href="post/index.html?id=${post.id}" class="read-share-landing">READ</a>
+                        <a href="${rootPath}/post/index.html?id=${post.id}" class="read-share-landing">READ</a>
                         <a href="#" class="read-share-landing" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                     </div>
                 </div>

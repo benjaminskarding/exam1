@@ -1,4 +1,4 @@
-import { API_BASE_URL, isUserAdmin, isLoggedIn, showOrHideButton, showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
+import { API_BASE_URL, isUserAdmin, isLoggedIn, showOrHideButton, showLoadingIndicator, hideLoadingIndicator, getRootPath } from './utils.mjs';
 
 // Login & logout
 
@@ -100,11 +100,10 @@ export function setupUserInterface() {
 // Could have made the adminpanel.html a much harder URL for anyone to guess, but don't consider it neccessary for demo */
 
 function showAdminPanelLink(adminPanelLink, userIsAdmin) {
-    const currentPath = window.location.pathname;
-    const projectBasePath = currentPath.split('/').slice(0, -1).join('/'); 
-    
+    const rootPath = getRootPath();
+
     if (userIsAdmin) {
-        adminPanelLink.href = `${projectBasePath}/pages/adminpanel.html`;
+        adminPanelLink.href = `${rootPath}/pages/adminpanel.html`;
         showOrHideButton(true, adminPanelLink);
     } else {
         showOrHideButton(false, adminPanelLink);
@@ -125,9 +124,9 @@ function updateAdminPanelTextOnResize(adminPanelLink) {
 
 function changeAdminPanelColor() {
     const currentPath = window.location.pathname;
-    const projectBasePath = currentPath.split('/').slice(0, -1).join('/'); 
+    const rootPath = getRootPath();
 
-    if (currentPath === `${projectBasePath}/index.html` || currentPath === `${projectBasePath}/post/index.html`) {
+    if (currentPath === `${rootPath}/index.html` || currentPath === `${rootPath}/post/index.html`) {
         document.querySelectorAll('.adminPanel').forEach(element => {
             element.style.color = 'white';
         });

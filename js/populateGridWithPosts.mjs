@@ -1,5 +1,5 @@
 import { fetchPosts } from './fetchPosts.mjs';
-import { showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
+import { showLoadingIndicator, hideLoadingIndicator, getRootPath } from './utils.mjs';
 
 export async function populateHomepageGrid() {
     const gridContainer = document.querySelector('.grid-container');
@@ -12,6 +12,7 @@ export async function populateHomepageGrid() {
 
     try {
         const postsData = await fetchPosts();
+        const rootPath = getRootPath();
 
         if (postsData && postsData.data) {
             const posts = postsData.data.slice(0, 12); 
@@ -28,7 +29,7 @@ export async function populateHomepageGrid() {
                         </div>
                         <div class="category-text">${post.tags.join(' X ').toUpperCase()}</div>
                         <div class="bold">
-                            <a href="${projectBasePath}/post/index.html?id=${post.id}" class="read-share">READ</a>
+                            <a href="${rootPath}/post/index.html?id=${post.id}" class="read-share">READ</a>
                             <a class="read-share">|</a>
                             <a href="#" class="read-share" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                         </div>

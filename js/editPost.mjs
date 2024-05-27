@@ -1,5 +1,5 @@
 import { fetchPost, updatePost } from './fetchPosts.mjs';
-import { isValidURL, showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
+import { isValidURL, showLoadingIndicator, hideLoadingIndicator, getRootPath } from './utils.mjs';
 
 document.addEventListener('DOMContentLoaded', async () => {
     await populateEditForm();
@@ -38,8 +38,7 @@ async function handleEditFormSubmit(event) {
     event.preventDefault();
     const params = new URLSearchParams(window.location.search);
     const postId = params.get('id');
-    const currentPath = window.location.pathname;
-    const projectBasePath = currentPath.split('/').slice(0, -1).join('/');
+    const rootPath = getRootPath();
 
     if (!postId) {
         console.error('No post ID found in the URL');
@@ -67,7 +66,7 @@ async function handleEditFormSubmit(event) {
         const response = await updatePost(postId, validatedData);
         if (response.ok) {
             alert('Post updated successfully.');
-            window.location.href = `${projectBasePath}/index.html?id=${postId}`;
+            window.location.href = `${rootPath}/index.html?id=${postId}`;
         } else {
             const responseData = await response.json();
             alert('Failed to update post: ' + (responseData.message || 'Error'));

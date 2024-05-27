@@ -55,6 +55,11 @@ export function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
 
+export function getRootPath() {
+    const pathParts = window.location.pathname.split('/');
+    return `/${pathParts[1]}`;
+}
+
 window.copyLink = function(event) { // Assign copyLink function to global window. Related to carouselItem 'share' button/link
     event.preventDefault();
     const postId = event.target.getAttribute('post-id');
