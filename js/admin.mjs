@@ -99,9 +99,12 @@ export function setupUserInterface() {
 // Security measure. In real life situation would have to find a better solution.
 // Could have made the adminpanel.html a much harder URL for anyone to guess, but don't consider it neccessary for demo */
 
-function showAdminPanelLink(adminPanelLink, userIsAdmin) { 
+function showAdminPanelLink(adminPanelLink, userIsAdmin) {
+    const currentPath = window.location.pathname;
+    const projectBasePath = currentPath.split('/').slice(0, 2).join('/'); 
+
     if (userIsAdmin) {
-        adminPanelLink.href = '/exam1/pages/adminpanel.html';
+        adminPanelLink.href = `${projectBasePath}/pages/adminpanel.html`;
         showOrHideButton(true, adminPanelLink);
     } else {
         showOrHideButton(false, adminPanelLink);
@@ -122,7 +125,9 @@ function updateAdminPanelTextOnResize(adminPanelLink) {
 
 function changeAdminPanelColor() {
     const currentPath = window.location.pathname;
-    if (currentPath === '/exam1/index.html' || currentPath === '/exam1/post/index.html') {
+    const projectBasePath = currentPath.split('/').slice(0, -1).join('/'); 
+
+    if (currentPath === `${projectBasePath}/index.html` || currentPath === `${projectBasePath}/post/index.html`) {
         document.querySelectorAll('.adminPanel').forEach(element => {
             element.style.color = 'white';
         });
