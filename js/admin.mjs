@@ -108,15 +108,6 @@ function showAdminPanelLink(adminPanelLink, userIsAdmin) {
     }
 }
 
-function showLogoutButton(loggedIn, logoutButton) {
-    if (loggedIn) {
-        logoutButton.classList.remove('hidden');
-        logoutButton.addEventListener('click', handleLogout);
-    } else {
-        logoutButton.classList.add('hidden');
-    }
-}
-
 // Visual related 
 
 function updateAdminPanelTextOnResize(adminPanelLink) {
@@ -131,7 +122,7 @@ function updateAdminPanelTextOnResize(adminPanelLink) {
 
 function changeAdminPanelColor() {
     const currentPath = window.location.pathname;
-    if (currentPath === '/index.html' || currentPath === '/post/index.html') {
+    if (currentPath === '/exam1/index.html' || currentPath === '/exam1/post/index.html') {
         document.querySelectorAll('.adminPanel').forEach(element => {
             element.style.color = 'white';
         });
