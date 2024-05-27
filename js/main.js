@@ -3,7 +3,6 @@ import { populateHomepageGrid } from './populateGridWithPosts.mjs';
 import { fetchPost } from './fetchPosts.mjs';
 import { populatePost } from './populateSinglePostPage.mjs';
 import { setupUserInterface } from './admin.mjs';
-import { initializeCarousel } from './carousel.mjs';
 import { populateAdminPanel } from './adminPanel.mjs';
 import { initializeRegistrationForm } from './register.mjs';
 import { hideLoadingIndicator, showLoadingIndicator } from './utils.mjs';
@@ -24,11 +23,6 @@ async function initializePageSpecificFunctions() {
     try {
         if (document.querySelector('.grid-container')) {
             populateHomepageGrid();
-        }
-    
-        // Check if on the index.html page and not post/index.html
-        if (window.location.pathname === '/index.html') {
-            await initializeCarousel();
         }
     
         // Check if on the admin panel page

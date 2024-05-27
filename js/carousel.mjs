@@ -137,3 +137,6 @@ function setupCarouselNavigation() {
 
     showSlide(currentIndex);
 }
+
+
+document.addEventListener('DOMContentLoaded', initializeCarousel);
