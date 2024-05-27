@@ -19,27 +19,50 @@ export async function RegisterUser(event) {
         return;
     }
 
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        return;
+    }
+
     if (!terms) {
         alert('You must agree to the terms of service.');
         return;
     }
 
+    const emailDomain = email.split('@')[1];
+    if (emailDomain !== 'stud.noroff.no') {
+        alert('Only stud.noroff.no emails are allowed to register.');
+        return;
+    }
+
     showLoadingIndicator();
+
+    const payload = {
+        name,
+        email,
+        password,
+        venueManager: false,
+    };
+
+    console.log("Registration Payload:", payload);
 
     try {
         const response = await fetch(`${API_BASE_URL}/auth/register`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, password })
+            body: JSON.stringify(payload)
         });
 
         const data = await response.json();
-        
+        console.log("Response Data:", data);
+
         if (response.ok) {
             alert('Registration successful!');
             window.location.href = './login.html';
         } else {
-            alert('Registration failed: ' + (data.message || 'Error'));
+            const errors = data.errors || [];
+            const errorMessage = errors.map(error => `${error.param}: ${error.msg}`).join('\n') || 'Registration failed due to an unknown error.';
+            alert(`Registration failed: ${errorMessage}`);
         }
     } catch (error) {
         console.error('Error during registration:', error);
