@@ -76,7 +76,7 @@
 .post-navigator {
     position: absolute;
     right: 12rem;
-    bottom: 6rem; 
+    bottom: 5.5rem; 
     display: flex;
     flex-direction: row;
     z-index: 10; 
