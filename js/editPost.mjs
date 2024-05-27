@@ -38,7 +38,6 @@ async function handleEditFormSubmit(event) {
     event.preventDefault();
     const params = new URLSearchParams(window.location.search);
     const postId = params.get('id');
-    const rootPath = getRootPath();
 
     if (!postId) {
         console.error('No post ID found in the URL');
@@ -64,6 +63,7 @@ async function handleEditFormSubmit(event) {
     showLoadingIndicator();
     try {
         const response = await updatePost(postId, validatedData);
+        const rootPath = getRootPath();
         if (response.ok) {
             alert('Post updated successfully.');
             window.location.href = `${rootPath}/index.html?id=${postId}`;
