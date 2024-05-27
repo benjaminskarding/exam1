@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to Nomad Narrative! Explore our travel blog with a grid of all posts and a carousel of the latest adventures.">
     <script type="module" defer src='js/main.js'></script> 
+    <script type="module" defer src='js/carousel.mjs'></script>
     <title>Nomad Narrative</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/Favicon/favicon-32x32.png">
@@ -12,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script type="module" defer src='js/carousel.mjs'></script>
+    <script> </script>
 </head>
 <body>
     <div class="landing-section" aria-label="Main image description">
@@ -49,10 +50,65 @@
         <section>
             <div class="carousel">
                 <div class="carousel-inner" id="carousel-inner">
-                  
+                    <div class="carousel-item active">
+                        <div class="hero-text">
+                            <div class="category-and-tags-container">
+                                <div class="bold">CATEGORY</div>
+                                <div class="bold">X</div>
+                                <div class="bold">TAG</div>
+                            </div>
+                            <div class="post-title-and-date-container">
+                                <div class="post-title semibold">TITLE</div>
+                                <div class="post-date light">DATE</div>
+                            </div>
+                            <div class="post-description-container">
+                                <p>DESCRIPTION...</p>
+                            </div>
+                            <div class="read-share-container">
+                                <a href="#" class="read-share-landing">READ</a>
+                                <a class="read-share-landing">|</a>
+                                <a href="#" class="read-share-landing" onclick="copyLink(event)">SHARE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="hero-text">
+                            <div class="category-and-tags-container">
+                                <div class="bold">CATEGORY</div>
+                                <div class="bold">X</div>
+                                <div class="bold">TAG</div>
+                            </div>
+                            <div class="post-title-and-date-container">
+                                <div class="post-title semibold">TITLE</div>
+                                <div class="post-date light">DATE</div>
+                            </div>
+                            <div class="post-description-container">
+                                <p>DESCRIPTION...</p>
+                            </div>
+                            <div class="read-share-container">
+                                <a href="#" class="read-share-landing">READ</a>
+                                <a class="read-share-landing">|</a>
+                                <a href="#" class="read-share-landing" onclick="copyLink(event)">SHARE</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="post-navigator" id="post-navigator">
-                   
+                    <a href="#" id="arrow-left-post-nav">
+                        <img src="./assets/SVGs/ArrowLeft.svg" alt="arrow-left-post-nav">
+                    </a>
+                    <a href="#" data-slide="0" class="active">
+                        <img src="./assets/SVGs/Dot_1.svg" alt="dot-ind-1-post-nav">
+                    </a>
+                    <a href="#" data-slide="1">
+                        <img src="./assets/SVGs/Dot_2.svg" alt="dot-ind-2-post-nav">
+                    </a>
+                    <a href="#" data-slide="2">
+                        <img src="./assets/SVGs/Dot_3.svg" alt="dot-ind-3-post-nav">
+                    </a>
+                    <a href="#" id="arrow-right-post-nav">
+                        <img src="./assets/SVGs/ArrowRight.svg" alt="arrow-right-post-nav">
+                    </a>
                 </div>
             </div>
         </section>
