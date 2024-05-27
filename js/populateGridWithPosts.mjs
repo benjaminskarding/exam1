@@ -3,7 +3,9 @@ import { showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
 
 export async function populateHomepageGrid() {
     const gridContainer = document.querySelector('.grid-container');
-    
+    const currentPath = window.location.pathname;
+    const projectBasePath = currentPath.split('/').slice(0, -1).join('/');
+
     if (!gridContainer) return;
 
     showLoadingIndicator();
@@ -26,7 +28,7 @@ export async function populateHomepageGrid() {
                         </div>
                         <div class="category-text">${post.tags.join(' X ').toUpperCase()}</div>
                         <div class="bold">
-                            <a href="post/index.html?id=${post.id}" class="read-share">READ</a>
+                            <a href="${projectBasePath}/post/index.html?id=${post.id}" class="read-share">READ</a>
                             <a class="read-share">|</a>
                             <a href="#" class="read-share" post-id="${post.id}" onclick="copyLink(event)">SHARE</a>
                         </div>

@@ -7,7 +7,6 @@ export async function initializeCarousel() {
     showLoadingIndicator();
     try {
         const posts = await fetchPosts();
-        console.log('Fetched posts:', posts); // Log posts data
         if (posts && posts.data) {
             generateCarouselHTML(posts.data.slice(0, 3)); 
             setupCarouselNavigation();
