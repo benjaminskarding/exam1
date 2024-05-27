@@ -3,7 +3,7 @@ import { showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
 
 export async function populateHomepageGrid() {
     const gridContainer = document.querySelector('.grid-container');
-
+    
     if (!gridContainer) return;
 
     showLoadingIndicator();
