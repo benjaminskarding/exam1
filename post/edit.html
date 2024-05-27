@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Edit your blog posts on Nomad Narrative to update your travel stories and insights with the latest details.">
-        <script type="module" defer src='../js/main.js'></script>
+        <script type="module" src='../js/main.js'></script>
         <title>Edit Blog Post</title>
         <link rel="stylesheet" href="../css/createBlogPost.css">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/Favicon/favicon-32x32.png">
@@ -12,7 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <script type="module" defer src='../js/editPost.mjs'></script>
+        <script type="module" src='../js/editPost.mjs'></script>
         <script type="module" src="../js/adminCheck.mjs"></script>
     </head>
 <body>
@@ -48,7 +48,7 @@
     <div class="form-container">
         
         <form id="postForm" class="postForm">
-            <h1 id="titleOfBlogPostBeingEdited" class="currentPost bold"></h1>
+            <h1 id="titleOfBlogPostBeingEdited" class="currentPost bold">Post Title</h1>
             <div class="divider"></div>
             
             <div class="input-group">
@@ -87,14 +87,14 @@
 
     <div id="menuOverlay" class="overlay">
         <a href="#" class="closebtn" id="closeMenuOverlay">
-            <img src="../assets/SVGs/CloseButton.svg" alt="Close" />
+            <img src="../assets/SVGs/CloseButton.svg" alt="Close">
         </a>
         <div class="overlay-content">
             <div class="overlay-links">
                 <a href="../account/register.html">Register</a>
                 <a href="../account/login.html">Login</a>
             </div>
-            <h1 class="aboutTheBlog">ABOUT THE BLOG</h1>
+            <h2 class="aboutTheBlog">ABOUT THE BLOG</h2>
             <div class="aboutTheBlogMobileContainer">
                 <a href="../pages/about_the_blog.html" class="aboutTheBlogMobile">About the blog</a>
             </div>
@@ -112,7 +112,7 @@
             </div>
             <div>
                 <a href="index.html">
-                    <img src="../assets/SVGs/LogoWithText.svg" id="facebook-svg-overlay" alt="homepage link in overlay menu">
+                    <img src="../assets/SVGs/LogoWithText.svg" id="logoInoverlay" alt="homepage link in overlay menu">
                 </a>
             </div>
         </div>

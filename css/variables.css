@@ -82,3 +82,17 @@ h1, h2, h3, h4, h5 {
     justify-content: center;
 }
 
+.createPostButton {
+    display: inline-block; 
+    background-color: #E5A13E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 20px 20px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    min-width: 120px;
+}

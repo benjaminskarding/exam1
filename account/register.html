@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Join Nomad Narrative to share your travel experiences and connect with a community of fellow adventurers.">
-        <script type="module" defer src='../js/main.js'></script>
-        <script type="module" defer src='../js/register.mjs'></script>
+        <script type="module" src='../js/main.js'></script>
+        <script type="module" src='../js/register.mjs'></script>
         <title>Register</title>
         <link rel="stylesheet" href="../css/login.css">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/Favicon/favicon-32x32.png">
@@ -54,7 +54,7 @@
                 <form id="registerForm">
                     <div class="input-group">
                         <label for="name">Username *</label>
-                        <input type="name" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="input-group">
                         <label for="email">Email Address *</label>
@@ -106,14 +106,14 @@
 
     <div id="menuOverlay" class="overlay">
         <a href="#" class="closebtn" id="closeMenuOverlay">
-            <img src="../assets/SVGs/CloseButton.svg" alt="Close" />
+            <img src="../assets/SVGs/CloseButton.svg" alt="Close">
         </a>
         <div class="overlay-content">
             <div class="overlay-links">
                 <a href="../account/register.html">Register</a>
                 <a href="../account/login.html">Login</a>
             </div>
-            <h1 class="aboutTheBlog">ABOUT THE BLOG</h1>
+            <h2 class="aboutTheBlog">ABOUT THE BLOG</h2>
             <div class="aboutTheBlogMobileContainer">
                 <a href="../pages/about_the_blog.html" class="aboutTheBlogMobile">About the blog</a>
             </div>
@@ -131,7 +131,7 @@
             </div>
             <div>
                 <a href="index.html">
-                    <img src="../assets/SVGs/LogoWithText.svg" id="facebook-svg-overlay" alt="homepage link in overlay menu">
+                    <img src="../assets/SVGs/LogoWithText.svg" id="logoInoverlay" alt="homepage link in overlay menu">
                 </a>
             </div>
         </div>
