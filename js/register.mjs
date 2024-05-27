@@ -2,6 +2,7 @@ import { API_BASE_URL, showLoadingIndicator, hideLoadingIndicator } from './util
 
 export async function RegisterUser(event) {
     event.preventDefault();
+    console.log("Form submission prevented, RegisterUser function called.");
 
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -41,7 +42,7 @@ export async function RegisterUser(event) {
         name,
         email,
         password,
-        venueManager: false,
+        venueManager: false
     };
 
     console.log("Registration Payload:", payload);
@@ -75,9 +76,14 @@ export async function RegisterUser(event) {
 function initializeRegistrationForm() {
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
+        console.log("Register form found, adding event listener.");
         registerForm.addEventListener('submit', RegisterUser);
+    } else {
+        console.error("Register form not found.");
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', initializeRegistrationForm);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed.");
+    initializeRegistrationForm();
+});
