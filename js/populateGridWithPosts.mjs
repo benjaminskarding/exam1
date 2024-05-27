@@ -24,7 +24,7 @@ export async function populateHomepageGrid() {
                     <img src="${post.media.url}" aria-label="${post.media.alt}">
                     <div class="text-overlay">
                         <div class="title-and-date">
-                            <div class="text-overlay-title semibold">${post.title.toUpperCase()}</div>
+                            <h2 class="text-overlay-title semibold">${post.title.toUpperCase()}</h2>
                             <div class="post-date light">${new Date(post.created).toLocaleDateString('en-GB').split('/').join(' | ')}</div>
                         </div>
                         <div class="category-text">${post.tags.join(' X ').toUpperCase()}</div>

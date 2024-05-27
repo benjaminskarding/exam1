@@ -40,7 +40,7 @@ function generateCarouselHTML(posts) {
                         <div class="bold">${(post.tags[1] || 'TAG').toUpperCase()}</div>
                     </div>
                     <div class="post-title-and-date-container">
-                        <div class="post-title semibold">${(post.title || 'TITLE').toUpperCase()}</div>
+                        <h1 class="post-title semibold">${(post.title || 'TITLE').toUpperCase()}</h1>
                         <div class="post-date light">${new Date(post.created).toLocaleDateString('en-GB').replace(/\//g, ' | ')}</div>
                     </div>
                     <div class="post-description-container">

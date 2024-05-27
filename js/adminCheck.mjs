@@ -1,6 +1,6 @@
-import { isUserAdmin, isLoggedIn } from './utils.mjs';
+import { isUserAdmin } from './utils.mjs';
 
-function checkAdminStatus() {
+function checkAdminStatus() { // Redirect from adminpage if not admin user. In case user guesses url. Secondary safety measure originally covered by not displaying href or admin panel visuals until admin user logged in
     const adminStatus = isUserAdmin();
     if (!adminStatus) {
         alert("You do not have the necessary permissions to access this page.");

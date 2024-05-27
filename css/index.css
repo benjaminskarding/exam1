@@ -151,7 +151,9 @@
 .text-overlay-title {
     font-size: 3.125rem;
     line-height: 1.5;
+    margin: 0;
 }
+
 
 .post-date,
 .text-overlay-title,
@@ -271,6 +273,6 @@
     }
 
     .category-and-tags-container {
-        font-size: 1.375rem;
+        font-size: 1.2rem;
     }
 }
