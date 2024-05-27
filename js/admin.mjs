@@ -101,7 +101,7 @@ export function setupUserInterface() {
 
 function showAdminPanelLink(adminPanelLink, userIsAdmin) { 
     if (userIsAdmin) {
-        adminPanelLink.href = '../pages/adminpanel.html';
+        adminPanelLink.href = '/exam1/pages/adminpanel.html';
         showOrHideButton(true, adminPanelLink);
     } else {
         showOrHideButton(false, adminPanelLink);
