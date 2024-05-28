@@ -156,9 +156,9 @@ function setupCarouselNavigation() {
         showSlide(currentIndex);
     };
 
-    document.querySelector('.landing-section').addEventListener('touchstart', handleTouchStart);
-    document.querySelector('.landing-section').addEventListener('touchmove', handleTouchMove);
-    document.querySelector('.landing-section').addEventListener('touchend', handleTouchEnd);
+    document.getElementById('carouselSect').addEventListener('touchstart', handleTouchStart);
+    document.getElementById('carouselSect').addEventListener('touchmove', handleTouchMove);
+    document.getElementById('carouselSect').addEventListener('touchend', handleTouchEnd);
 
     showSlide(currentIndex);
 }
