@@ -135,19 +135,20 @@ function setupCarouselNavigation() {
         });
     });
 
-    // Swipe functionality
+    // Swipe functionality (yes, im very proud of this one)
     let startX = 0;
     let startY = 0;
     let endX = 0;
     let endY = 0;
-    let isSwiping = false;
+    let isSwiping = false; // Initial swipe state
 
-    const SWIPE_THRESHOLD = 30; // Minimum distance for a swipe
+    const SWIPE_THRESHOLD = 30; // Minimum distance for a swipe to be registered. 
+    // I wanted to see if i could avoid having the screen start scrolling downward if user was clearly just trying to left/right swipe the landing section carousel. Found it annoying.
 
     const handleTouchStart = (event) => {
-        const interactiveElements = ['A', 'BUTTON']; // Tags for interactive elements
+        const interactiveElements = ['A', 'BUTTON']; // Targeting anchor tags and buttons in header and hero text. If these elements are clicked, carousel swiping functionality should not execute (thereby not blocking element interactivity)
         if (interactiveElements.includes(event.target.tagName)) {
-            isSwiping = false; // Do not initiate swipe if touch starts on an interactive element
+            isSwiping = false; // Do not initiate swipe functionality if touch starts on an interactive element
         } else {
             isSwiping = true;
             startX = event.touches[0].clientX;
@@ -167,14 +168,15 @@ function setupCarouselNavigation() {
             const deltaX = endX - startX;
             const deltaY = endY - startY;
 
-            if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_THRESHOLD) {
-                // Only consider it a swipe if horizontal movement is greater than the threshold
-                // and vertical movement is less than the threshold
-                if (deltaX > 0) {
-                    // Swipe right
+            if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_THRESHOLD) { // Retrieves _magnitude_ of swipe. Math.abs converts negative numbers to positive if present, 
+                                                                                            // this conversion is done for consistency in outcome, as we only need the _magnitude_ of movement in this case, not direction, 
+                                                                                            // Intention here is to only consider user input a swipe if horizontal movement is higher than the threshold
+                                                                                            // AND vertical movement is less than the threshold
+                if (deltaX > 0) { 
+                    // Swipe right if thresholds validated and swipe value positive
                     currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
                 } else {
-                    // Swipe left
+                    // Swipe left if thresholds validated and swipe value negative
                     currentIndex = (currentIndex + 1) % carouselItems.length;
                 }
                 showSlide(currentIndex);
@@ -185,7 +187,7 @@ function setupCarouselNavigation() {
         }
     };
 
-    // Attach touch event listeners to the landing-section element
+    // Event listeners for the landing-section element
     landingSection.addEventListener('touchstart', handleTouchStart);
     landingSection.addEventListener('touchmove', handleTouchMove);
     landingSection.addEventListener('touchend', handleTouchEnd);
