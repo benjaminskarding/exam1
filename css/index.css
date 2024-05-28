@@ -122,21 +122,24 @@
 
 .grid-item:hover::after, /* Show grid item content on hover */ 
 .grid-item:hover img,/* Show image on hover */
-.grid-item.active::after, /* Show grid item content on hover */ 
-.grid-item.active img, /* Show image on hover */
+.grid-item.active::after, /* Show grid item content on mobile tap */ 
+.grid-item.active img, /* Show image on mobile tap */
 .carousel-item.active { 
     opacity: 1; 
 }
 
 /* Grid text animation */
 
-.text-overlay, .read-share { /* Set initial text color to black */
+.text-overlay, 
+.read-share { /* Set initial text color to black */
     color: black; 
     transition: color 0.5s ease; 
 }
 
 .grid-item:hover .text-overlay, 
-.grid-item:hover .read-share { /* Change text color to white on hover */
+.grid-item:hover .read-share,
+.grid-item.active .text-overlay,
+.grid-item.active .read-share { /* Change text color to white on hover */
     color: white; 
 }
 
