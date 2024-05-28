@@ -106,6 +106,8 @@
     opacity: 0;
 }
 
+/* Grid animation related */
+
 .grid-item::after {
     content: '';
     position: absolute;
@@ -124,6 +126,18 @@
 .grid-item.active img, /* Show image on hover */
 .carousel-item.active { 
     opacity: 1; 
+}
+
+/* Grid text animation */
+
+.text-overlay, .read-share { /* Set initial text color to black */
+    color: black; 
+    transition: color 0.5s ease; 
+}
+
+.grid-item:hover .text-overlay, 
+.grid-item:hover .read-share { /* Change text color to white on hover */
+    color: white; 
 }
 
 .carousel-item {
@@ -166,17 +180,6 @@
 .category-text {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-}
-
-/* Text animation */
-
-.text-overlay, .read-share { /* Set initial text color to black */
-    color: black; 
-    transition: color 0.5s ease; 
-}
-
-.grid-item:hover .text-overlay, .grid-item:hover .read-share { /* Change text color to white on hover */
-    color: white; 
 }
 
 /* Not displayed on desktop viewport */
