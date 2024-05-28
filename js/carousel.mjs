@@ -138,27 +138,38 @@ function setupCarouselNavigation() {
     // Swipe functionality
     let startX = 0;
     let endX = 0;
+    let isSwiping = false;
 
     const handleTouchStart = (event) => {
-        startX = event.touches[0].clientX;
+        const interactiveElements = ['A', 'BUTTON']; // Tags for interactive elements
+        if (interactiveElements.includes(event.target.tagName)) {
+            isSwiping = false; // Do not initiate swipe if touch starts on an interactive element
+        } else {
+            isSwiping = true;
+            startX = event.touches[0].clientX;
+        }
     };
 
     const handleTouchMove = (event) => {
-        endX = event.touches[0].clientX;
+        if (isSwiping) {
+            endX = event.touches[0].clientX;
+        }
     };
 
     const handleTouchEnd = () => {
-        if (startX > endX) {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-        } else if (startX < endX) {
-            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        if (isSwiping) {
+            if (startX > endX) {
+                currentIndex = (currentIndex + 1) % carouselItems.length;
+            } else if (startX < endX) {
+                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            }
+            showSlide(currentIndex);
         }
-        showSlide(currentIndex);
     };
 
-    document.getElementById('carouselSect').addEventListener('touchstart', handleTouchStart);
-    document.getElementById('carouselSect').addEventListener('touchmove', handleTouchMove);
-    document.getElementById('carouselSect').addEventListener('touchend', handleTouchEnd);
+    landingSection.addEventListener('touchstart', handleTouchStart);
+    landingSection.addEventListener('touchmove', handleTouchMove);
+    landingSection.addEventListener('touchend', handleTouchEnd);
 
     showSlide(currentIndex);
 }
