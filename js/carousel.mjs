@@ -135,6 +135,31 @@ function setupCarouselNavigation() {
         });
     });
 
+    // Swipe functionality
+    let startX = 0;
+    let endX = 0;
+
+    const handleTouchStart = (event) => {
+        startX = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event) => {
+        endX = event.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+        if (startX > endX) {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+        } else if (startX < endX) {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        }
+        showSlide(currentIndex);
+    };
+
+    document.querySelector('.carousel-inner').addEventListener('touchstart', handleTouchStart);
+    document.querySelector('.carousel-inner').addEventListener('touchmove', handleTouchMove);
+    document.querySelector('.carousel-inner').addEventListener('touchend', handleTouchEnd);
+
     showSlide(currentIndex);
 }
 
