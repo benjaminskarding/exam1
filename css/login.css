@@ -119,3 +119,9 @@ input[type="checkbox"]:checked + label .checkbox-custom {
     }
 }
 
+@media (max-width: 543px) {
+    .terms-overlay {
+        width: 70vw;
+        max-height: 50%; 
+    }
+}
