@@ -135,7 +135,7 @@ function setupCarouselNavigation() {
         });
     });
 
-    // Swipe functionality (yes, im very proud of this one)
+    // Swipe functionality (yes, i'm proud of this one)
     let startX = 0;
     let startY = 0;
     let endX = 0;
@@ -173,10 +173,10 @@ function setupCarouselNavigation() {
                                                                                             // Intention here is to only consider user input a swipe if horizontal movement is higher than the threshold
                                                                                             // AND vertical movement is less than the threshold
                 if (deltaX > 0) { 
-                    // Swipe right if thresholds validated and swipe value positive
+                    // Swipe right (moving backwards in carousel) if thresholds validated and swipe value positive
                     currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
                 } else {
-                    // Swipe left if thresholds validated and swipe value negative
+                    // Swipe left (moving forwards in carousel) if thresholds validated and swipe value negative
                     currentIndex = (currentIndex + 1) % carouselItems.length;
                 }
                 showSlide(currentIndex);
