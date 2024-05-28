@@ -35,6 +35,11 @@ export async function populateHomepageGrid() {
                         </div>
                     </div>
                 `;
+
+                // Add touchstart event listener for mobile tap grid image display
+                postElement.addEventListener('touchstart', () => {
+                    postElement.classList.add('active');
+                });
     
                 gridContainer.appendChild(postElement);
             });

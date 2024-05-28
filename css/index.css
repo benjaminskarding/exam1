@@ -119,7 +119,9 @@
 }
 
 .grid-item:hover::after, /* Show grid item content on hover */ 
-.grid-item:hover img, /* Show image on hover */
+.grid-item:hover img,/* Show image on hover */
+.grid-item.active::after, /* Show grid item content on hover */ 
+.grid-item.active img, /* Show image on hover */
 .carousel-item.active { 
     opacity: 1; 
 }
