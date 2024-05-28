@@ -137,8 +137,12 @@ function setupCarouselNavigation() {
 
     // Swipe functionality
     let startX = 0;
+    let startY = 0;
     let endX = 0;
+    let endY = 0;
     let isSwiping = false;
+
+    const SWIPE_THRESHOLD = 30; // Minimum distance for a swipe
 
     const handleTouchStart = (event) => {
         const interactiveElements = ['A', 'BUTTON']; // Tags for interactive elements
@@ -147,29 +151,45 @@ function setupCarouselNavigation() {
         } else {
             isSwiping = true;
             startX = event.touches[0].clientX;
+            startY = event.touches[0].clientY;
         }
     };
 
     const handleTouchMove = (event) => {
         if (isSwiping) {
             endX = event.touches[0].clientX;
+            endY = event.touches[0].clientY;
         }
     };
 
-    const handleTouchEnd = () => {
+    const handleTouchEnd = (event) => {
         if (isSwiping) {
-            if (startX > endX) {
-                currentIndex = (currentIndex + 1) % carouselItems.length;
-            } else if (startX < endX) {
-                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            const deltaX = endX - startX;
+            const deltaY = endY - startY;
+
+            if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaY) < SWIPE_THRESHOLD) {
+                // Only consider it a swipe if horizontal movement is greater than the threshold
+                // and vertical movement is less than the threshold
+                if (deltaX > 0) {
+                    // Swipe right
+                    currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                } else {
+                    // Swipe left
+                    currentIndex = (currentIndex + 1) % carouselItems.length;
+                }
+                showSlide(currentIndex);
+
+                // Prevent default to avoid scrolling
+                event.preventDefault();
             }
-            showSlide(currentIndex);
         }
     };
 
+    // Attach touch event listeners to the landing-section element
     landingSection.addEventListener('touchstart', handleTouchStart);
     landingSection.addEventListener('touchmove', handleTouchMove);
     landingSection.addEventListener('touchend', handleTouchEnd);
+
 
     showSlide(currentIndex);
 }
