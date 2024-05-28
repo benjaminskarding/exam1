@@ -130,16 +130,23 @@
 
 /* Grid text animation */
 
-.text-overlay, 
-.read-share { /* Set initial text color to black */
+.text-overlay, /* Set initial text color to black */
+.read-share,
+.category-text,
+.title-and-date { 
     color: black; 
     transition: color 0.5s ease; 
 }
 
-.grid-item:hover .text-overlay, 
+
+.grid-item:hover .text-overlay, /* Change text color to white on hover and mobile tap */
 .grid-item:hover .read-share,
+.grid-item:hover .category-text,
+.grid-item:hover .title-and-date,
 .grid-item.active .text-overlay,
-.grid-item.active .read-share { /* Change text color to white on hover */
+.grid-item.active .read-share,
+.grid-item.active .category-text,
+.grid-item.active .title-and-date { 
     color: white; 
 }
 
