@@ -192,6 +192,36 @@
     margin-bottom: 1rem;
 }
 
+/* Search posts input field */
+
+#tag-search-input{
+    width: 95px; 
+    border: none; 
+    background: none; 
+    margin-left: -0.2rem;
+}
+
+#tag-search-input::placeholder {
+    color: white; 
+    opacity: 1; 
+}
+
+/* Styling for no posts message */
+
+.grid-container.no-posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column; 
+}
+
+.no-posts {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+}
+
 /* Not displayed on desktop viewport */
 
 .read-share-container-mobile {

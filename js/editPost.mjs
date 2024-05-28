@@ -21,7 +21,7 @@ async function populateEditForm() {
                 document.getElementById('postMainImageURL').value = postData.data.media.url || '';
                 document.getElementById('postMainImageAlt').value = postData.data.media?.alt || '';
                 document.getElementById('postTitle').value = postData.data.title || '';
-                document.getElementById('postBodyText').value = postData.data.body || '';
+                document.getElementById('postBodyText').value = postData.data.body.replace(/\\n/g, '\n') || '';
                 document.getElementById('postCategoryAndTag').value = postData.data.tags.join(', ') || '';
             }
         } catch (error) {
@@ -51,7 +51,7 @@ async function handleEditFormSubmit(event) {
         postMainImageURL: formData.get('postMainImageURL'), 
         postMainImageAlt: formData.get('postMainImageAlt'),
         postTitle: formData.get('postTitle'),
-        postBodyText: formData.get('postBodyText'),
+        postBodyText: formData.get('postBodyText').replace(/\n/g, '\\n'),
         postCategoryAndTag: formData.get('postCategoryAndTag')
     };
 

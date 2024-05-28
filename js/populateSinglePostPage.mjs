@@ -27,7 +27,7 @@ export async function populatePost() {
             document.getElementById('postDate').textContent = new Date(post.created).toLocaleDateString('en-GB').replace(/\//g, ' | ');
             document.getElementById('postIntro').innerHTML = `<p>${post.body.split(' ').slice(0, 30).join(' ')}...</p>`;
             document.getElementById('postHeader').textContent = post.title || 'Header';
-            document.getElementById('postHeaderParagraphContent').textContent = post.body || 'Content';
+            document.getElementById('postHeaderParagraphContent').innerHTML = post.body.replace(/\\n/g, '<br>') || 'Content';
 
             // Set image + image url
             const landingSection = document.querySelector('.landing-section');
