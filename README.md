@@ -1,11 +1,11 @@
 # FED1 Project Exam 1
 
-
+![Screenshot 2024-05-31 142048](https://github.com/benjaminskarding/CA/assets/127968874/6aba9e26-f593-478b-b0bb-865a9a51bd90)
 Project Description
 
 Overview:
 
-My project is a travel blog for a globetrotter who shares a variety of posts. These range from portraits of unique individuals he meets, to activities he participates in, and traditional travel posts like sightseeing.
+The project is a travel blog for a globetrotter who shares a variety of posts. These range from portraits of unique individuals he meets, to activities he participates in, and traditional travel posts like sightseeing.
 
 
 Features:
