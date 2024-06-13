@@ -3,9 +3,6 @@ import { showLoadingIndicator, hideLoadingIndicator, getRootPath } from './utils
 
 export async function populateHomepageGrid() {
     const gridContainer = document.querySelector('.grid-container');
-    const searchInput = document.getElementById('tag-search-input');
-    const currentPath = window.location.pathname;
-    const projectBasePath = currentPath.split('/').slice(0, -1).join('/');
 
     if (!gridContainer) return;
 
