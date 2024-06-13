@@ -66,16 +66,6 @@ export async function populateHomepageGrid() {
     // Display all posts initially
     displayPosts(postsData.data.slice(0, 12));
 
-    // Search input
-    searchInput.addEventListener('input', (event) => {
-        const query = event.target.value.toLowerCase();
-        const filteredPosts = postsData.data.filter(post => {
-            const titleMatches = post.title.toLowerCase().includes(query);
-            const tagMatches = post.tags.some(tag => tag.toLowerCase().includes(query));
-            return titleMatches || tagMatches;
-        });
-        displayPosts(filteredPosts.slice(0, 12));
-    });
 
     hideLoadingIndicator();
 }
